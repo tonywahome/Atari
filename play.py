@@ -54,18 +54,18 @@ def main():
 
     total_rewards = []
     for episode in range(1, args.episodes + 1):
-        obs, info = env.reset()
-        total_reward = 0
+        obs = env.reset()
+        total_reward = 0.0
         steps = 0
-        done = False
 
-        while not done:
+        while True:
             # Greedy Q-policy: deterministic=True selects the highest Q-value action
             action, _states = model.predict(obs, deterministic=True)
-            obs, reward, terminated, truncated, info = env.step(action)
-            total_reward += reward
+            obs, rewards, dones, infos = env.step(action)
+            total_reward += rewards[0]
             steps += 1
-            done = terminated or truncated
+            if dones[0]:
+                break
 
         total_rewards.append(total_reward)
         print(f"  Episode {episode}: Reward = {total_reward:.0f}, Steps = {steps}")
