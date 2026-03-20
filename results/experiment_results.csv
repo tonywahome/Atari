@@ -1,2 +1,11 @@
 Exp,Policy,lr,gamma,batch_size,expl_fraction,expl_initial_eps,expl_final_eps,Mean Reward,Std Reward,Mean Ep Length,Time (min),Description
-1,CnnPolicy,0.0001,0.99,32,0.1,1.0,0.01,210.0,0.0,82.55,0.0,Baseline (RL Zoo Atari defaults)
+1,CnnPolicy,0.0001,0.99,32,0.3,1.0,0.02,726.0,299.61,53.4,4.1,Baseline with extended exploration
+2,CnnPolicy,0.0005,0.99,32,0.3,1.0,0.02,558.0,111.79,65.0,4.1,Higher learning rate
+3,CnnPolicy,1e-05,0.99,32,0.4,1.0,0.05,733.0,199.75,213.8,3.4,"Lower lr, longer exploration"
+4,CnnPolicy,0.0001,0.95,32,0.3,1.0,0.02,276.0,129.63,161.0,4.7,"Lower gamma (myopic, favors dodging)"
+5,CnnPolicy,0.0001,0.999,32,0.3,1.0,0.02,487.0,192.15,89.0,3.4,Higher gamma (farsighted)
+6,CnnPolicy,0.0001,0.99,64,0.25,1.0,0.02,653.0,147.92,133.8,3.7,Larger batch size
+7,CnnPolicy,0.0001,0.99,128,0.25,1.0,0.02,570.0,164.98,137.8,6.3,Even larger batch size
+8,CnnPolicy,0.0001,0.99,32,0.5,1.0,0.05,240.0,161.25,67.4,2.7,"Maximum exploration (long decay, high floor)"
+9,CnnPolicy,0.0002,0.98,64,0.35,1.0,0.03,955.0,214.58,105.4,3.8,Balanced aggressive (faster lr + more exploration)
+10,MlpPolicy,0.0001,0.99,32,0.3,1.0,0.02,458.0,169.34,457.8,0.4,MLP on RAM observations (CnnPolicy vs MlpPolicy comparison)
