@@ -23,7 +23,7 @@ from stable_baselines3.common.evaluation import evaluate_policy
 from stable_baselines3.common.vec_env import VecTransposeImage
 
 from tools.env_factory import make_cnn_env, make_mlp_env
-from tools.hyperparams import EXPERIMENTS, get_dqn_kwargs, get_experiment
+from Atari.workflows.hyperparams import EXPERIMENTS, get_dqn_kwargs, get_experiment
 from tools.results_tracker import ResultsTracker
 
 
