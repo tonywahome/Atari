@@ -1,0 +1,11 @@
+Exp,Policy,lr,gamma,batch_size,expl_fraction,expl_initial_eps,expl_final_eps,Mean Reward,Std Reward,Mean Ep Length,Time (min),Description
+1,CnnPolicy,0.0003,0.97,48,0.35,1.0,0.01,1143.5,455.59,171.15,141.3,High lr with conservative exploration (CNN variant A)
+2,CnnPolicy,5e-05,0.99,32,0.45,1.0,0.04,1427.0,495.35,319.55,115.4,Very low lr with strong exploration
+3,CnnPolicy,0.0001,0.9,32,0.3,1.0,0.02,1105.5,625.2,178.15,125.6,Low gamma (short-term focused)
+4,CnnPolicy,0.0002,0.999,32,0.25,1.0,0.01,1134.0,421.07,248.65,113.4,High gamma with fast learning (long-term + quick adaptation)
+5,CnnPolicy,0.0001,0.99,16,0.4,1.0,0.03,967.5,383.46,338.85,94.1,Small batch size with extended exploration
+6,CnnPolicy,0.0001,0.98,96,0.2,1.0,0.02,1142.0,423.37,228.65,188.1,Large batch with minimal exploration (stability focused)
+7,CnnPolicy,0.0004,0.96,64,0.45,1.0,0.05,943.5,293.64,170.15,131.0,Aggressive learning + exploration (high variance strategy)
+8,CnnPolicy,8e-05,0.995,32,0.25,1.0,0.015,1175.0,274.89,311.95,106.1,"Conservative tuning (low lr, high gamma, minimal exploration)"
+9,MlpPolicy,0.0001,0.99,32,0.35,1.0,0.02,558.5,153.08,1000.0,14.9,"MLP baseline (RAM observations, balanced params)"
+10,MlpPolicy,0.0002,0.97,64,0.4,1.0,0.03,799.5,242.52,580.8,13.9,MLP with higher lr and larger batch (faster training)
