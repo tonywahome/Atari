@@ -1,0 +1,11 @@
+Exp,Policy,lr,gamma,batch_size,expl_fraction,expl_initial_eps,expl_final_eps,Mean Reward,Std Reward,Mean Ep Length,Time (min),Description
+Exp_1,CnnPolicy,0.0001,0.99,32,0.3,1.0,0.02,1438.0,696.47,115.3,0.6,Baseline configuration with default hyperparameters | Changes: No changes
+Exp_2,CnnPolicy,0.0001,0.99,32,0.3,1.0,0.02,1868.0,537.23,149.3,0.88,Tests effect of smaller replay buffer (less memory diversity) | Changes: buffer_size: 100000 → 50000
+Exp_3,CnnPolicy,0.0001,0.99,32,0.3,1.0,0.02,1736.0,483.06,166.3,0.86,"More frequent updates to learn faster | Changes: train_freq: 4 → 1, gradient_steps: 1 → 4"
+Exp_4,CnnPolicy,0.0001,0.99,32,0.3,1.0,0.02,1566.0,519.33,146.1,0.75,Less frequent updates to reduce overfitting | Changes: train_freq: 4 → 8
+Exp_5,CnnPolicy,0.0001,0.99,32,0.3,1.0,0.02,1704.0,810.69,120.5,0.65,Stabilizes training by limiting gradient size | Changes: No changes
+Exp_6,CnnPolicy,0.0001,0.99,32,0.3,1.0,0.02,1780.0,854.21,185.3,0.73,Tests impact of larger neural network | Changes: No changes
+Exp_7,CnnPolicy,0.0001,0.5,32,0.3,1.0,0.02,745.0,331.61,26.2,0.2,Focuses on short-term rewards | Changes: gamma: 0.99 → 0.5
+Exp_8,CnnPolicy,0.0001,0.97,32,0.3,1.0,0.02,2177.0,792.1,133.8,0.74,Balances short-term and long-term rewards | Changes: gamma: 0.99 → 0.97
+Exp_9,CnnPolicy,0.0001,0.99,32,0.05,1.0,0.005,1954.0,822.83,96.2,0.71,"Reduces exploration, favors exploitation early | Changes: exploration_fraction: 0.3 → 0.05, exploration_final_eps: 0.02 → 0.005"
+Exp_10,CnnPolicy,0.0001,0.99,16,0.3,1.0,0.02,1447.0,395.63,127.8,0.63,Introduces noisier but faster updates | Changes: batch_size: 32 → 16
